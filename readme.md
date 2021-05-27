@@ -1,0 +1,1 @@
+[link to guide](https://www.valentinog.com/blog/vue-django/)
