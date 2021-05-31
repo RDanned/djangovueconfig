@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-q-fg7)+z*wpr_@w#(e6cclzc-ru5q0ce5t-p50e2@i9c+fe^nd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'95.142.45.62',
+	'95.142.45.62:8000',
+	'test1.ruserg.ml',
+	'test1.ruserg.ml:8000'
+]
 
 print ("base dir path", BASE_DIR)
 

@@ -2,9 +2,33 @@ version: '3.7'
 
 services:
     web:
-        build: ./
-        command: python manage.py runserver 0.0.0.0:8000
+        build: 
+          context: ./
+          dockerfile: Dockerfile
+        #command: python manage.py runserver 0.0.0.0:8000
+        command: bash -c 'pip install config && pip install eventlet && pip install gunicorn && gunicorn --bind 0.0.0.0:8000 djdocker.wsgi'
         volumes:
         - .:/web_django
+        #expose:
+        #- 8000
         ports:
         - '8000:8000'
+    #    labels:
+    #    - "traefik.enable=true"
+    #    - "traefik.http.routers.django.rule=Host(`test1.ruserg.ml`)"
+    #    - "traefik.http.routers.django.tls=true"
+
+    #traefik:
+    #    image: traefik:v2.2
+    #   ports:
+    #    - 80:80
+    #    #- 8081:8080
+    #    volumes:
+    #    - "$PWD/traefik.dev.toml:/etc/traefik/traefik.toml"
+    #    - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    #    labels:
+    #    - "traefik.enable=true"
+    #    - "traefik.http.routers.dashboard.rule=Host(`ruserg.ml`)"
+    #    - "traefik.http.routers.dashboard.tls=true"
+        
+
