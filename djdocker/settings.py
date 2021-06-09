@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-q-fg7)+z*wpr_@w#(e6cclzc-ru5q0ce5t-p50e2@i9c+fe^nd
 DEBUG = True
 
 ALLOWED_HOSTS = [
-	'127.0.0.1:8000',
-    '127.0.0.1'
+	'*'
 ]
 
 print ("base dir path", BASE_DIR)
@@ -123,13 +122,11 @@ USE_TZ = True
 
 import os
 
-#STATIC_ROOT = os.path.join(BASE_DIR, '/testdocker/templates/static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = [
-    #BASE_DIR / "static",
     #'D:/prac_proj/djdocker/testdocker/templates/static',
-    BASE_DIR / "testdocker/templates/static",
+    BASE_DIR / "testdocker/templates/static/",
 ]
 
 STATIC_URL = '/static/'
